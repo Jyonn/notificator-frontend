@@ -155,6 +155,19 @@ result = notificator.mail(
 )
 print(result)
 
+# Send an ntfy notification (token is optional for public topics)
+ntfy_result = notificator.ntfy(
+    "https://ntfy.sh/server-alerts",
+    format="markdown",
+    title="Deploy finished",
+    body="Production is **healthy**.",
+    token="tk_your-access-token",
+    priority="high",
+    tags=["white_check_mark"],
+    click="https://example.com/jobs/42",
+)
+print(ntfy_result)
+
 # Or fan out one message to multiple channels
 multi_result = (
     notificator
