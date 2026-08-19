@@ -168,6 +168,18 @@ ntfy_result = notificator.ntfy(
 )
 print(ntfy_result)
 
+# Send a Gotify notification
+gotify_result = notificator.gotify(
+    "https://push.example.com",
+    token="A_your-application-token",
+    format="markdown",
+    title="Deploy finished",
+    body="Production is **healthy**.",
+    priority=7,
+    click="https://example.com/jobs/42",
+)
+print(gotify_result)
+
 # Or fan out one message to multiple channels
 multi_result = (
     notificator
