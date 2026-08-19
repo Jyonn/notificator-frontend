@@ -180,6 +180,15 @@ gotify_result = notificator.gotify(
 )
 print(gotify_result)
 
+# Send a PushDeer notification
+pushdeer_result = notificator.pushdeer(
+    "PDU_your-push-key",
+    format="markdown",
+    title="Deploy finished",
+    body="Production is **healthy**.",
+)
+print(pushdeer_result)
+
 # Or fan out one message to multiple channels
 multi_result = (
     notificator
